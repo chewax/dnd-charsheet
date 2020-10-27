@@ -1,10 +1,7 @@
 <template>
-  <div
-    class="text-input"
-    v-bind:class="{
+  <div class="text-input" v-bind:class="{
       xs: xs
-    }"
-  >
+    }">
     <input v-model="inputValue" @input="onInputChange()" type="text" />
     <span>{{ msg }}</span>
   </div>
@@ -20,22 +17,24 @@ export default {
   },
   data: function() {
     return {
-      inputValue: this.value
+      inputValue: this.modelValue
     };
   },
   methods: {
     onInputChange() {
       this.$emit("update:modelValue", this.inputValue);
     }
+  },
+  watch: {
+    modelValue: function(val) {
+      this.inputValue = val;
+    }
   }
 };
 </script>
 
 <style scoped lang="scss">
-$xsmall-screen: "only screen and (max-width : 350px)";
-$small-screen: "only screen and (max-width : 600px)";
-$large-screen: "only screen and (min-width : 950px)";
-$xlarge-screen: "only screen and (min-width : 1500px)";
+@import "@/assets/styles/_media.scss";
 
 .text-input {
   display: flex;
