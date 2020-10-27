@@ -4,9 +4,8 @@
       <char-summary :character="character"></char-summary>
       <char-actions v-model="character"></char-actions>
     </div>
-
     <char-base-info v-model="character"></char-base-info>
-    {{ character }}
+    <char-characteristics v-model="character"></char-characteristics>
   </div>
 </template>
 
@@ -27,10 +26,12 @@
 import CharSummary from "@/components/CharSummary.vue";
 import CharBaseInfo from "@/components/CharBaseInfo.vue";
 import CharActions from "@/components/CharActions.vue";
+import CharCharacteristics from "@/components/CharCharacteristics.vue";
 
 export default {
   components: {
     CharBaseInfo,
+    CharCharacteristics,
     CharSummary,
     CharActions
   },

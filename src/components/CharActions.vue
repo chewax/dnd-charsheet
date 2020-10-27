@@ -1,8 +1,8 @@
 <template>
   <div class="char-actions">
-    <!-- <button class="char-action-button" @click="uploadJSON()">Subir JSON</button> -->
-    <button class="char-action-button" @click="downloadJSON()">Descargar</button>
-    <input type="file" accept="application/json" @change="onFileChange" />
+    <button class="char-action-button" @click="$refs.file.click()">Abrir</button>
+    <button class="char-action-button" @click="downloadJSON()">Guardar</button>
+    <input ref="file" type="file" accept="application/json" @change="onFileChange" />
   </div>
 </template>
 
@@ -28,6 +28,7 @@ export default {
       if (!files.length) return;
       this.readFile(files[0]);
     },
+
     readFile(file) {
       let reader = new FileReader();
       reader.onload = e => {
@@ -76,7 +77,12 @@ export default {
 .char-actions {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  input {
+    display: none;
+  }
 }
 
 .char-action-button {

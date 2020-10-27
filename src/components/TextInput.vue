@@ -38,7 +38,7 @@ export default {
 
 .text-input {
   display: flex;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   margin-left: 1vw;
   margin-right: 1vw;
   flex-direction: column;
