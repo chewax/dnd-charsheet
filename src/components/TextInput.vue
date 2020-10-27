@@ -2,7 +2,7 @@
   <div class="text-input" v-bind:class="{
       xs: xs
     }">
-    <input v-model="inputValue" @input="onInputChange()" type="text" />
+    <input v-model="inputValue" @input="onInputChange()" v-bind:type="type" />
     <span>{{ msg }}</span>
   </div>
 </template>
@@ -13,6 +13,7 @@ export default {
   props: {
     msg: String,
     modelValue: String,
+    type: String,
     xs: Boolean
   },
   data: function() {

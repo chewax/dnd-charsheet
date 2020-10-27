@@ -50,10 +50,7 @@ export default {
   },
   data: function() {
     return {
-      character: {
-        ...this.modelValue,
-        characteristics: { [this.name]: {} }
-      }
+      character: this.modelValue
     };
   },
   methods: {

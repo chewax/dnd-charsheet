@@ -5,7 +5,10 @@
       <char-actions v-model="character"></char-actions>
     </div>
     <char-base-info v-model="character"></char-base-info>
-    <char-characteristics v-model="character"></char-characteristics>
+
+    <div class="char-traits-group">
+      <char-characteristics v-model="character"></char-characteristics>
+    </div>
   </div>
 </template>
 
@@ -19,6 +22,12 @@
   display: flex;
   justify-content: space-between;
   margin: 4vh 5vw 4vh 5vw;
+}
+
+.char-traits-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 </style>
   
@@ -38,7 +47,45 @@ export default {
   data: () => ({
     character: {
       image_url: "https://pbs.twimg.com/media/EN6HSm4W4AAkfP5.png",
-      level: "1"
+      level: "1",
+      characteristics: {
+        strength: {
+          punt: 0,
+          mod: 0,
+          punt_temp: 0,
+          mod_temp: 0
+        },
+        dexterity: {
+          punt: 0,
+          mod: 0,
+          punt_temp: 0,
+          mod_temp: 0
+        },
+        constitution: {
+          punt: 0,
+          mod: 0,
+          punt_temp: 0,
+          mod_temp: 0
+        },
+        intelligence: {
+          punt: 0,
+          mod: 0,
+          punt_temp: 0,
+          mod_temp: 0
+        },
+        wisdom: {
+          punt: 0,
+          mod: 0,
+          punt_temp: 0,
+          mod_temp: 0
+        },
+        charistma: {
+          punt: 0,
+          mod: 0,
+          punt_temp: 0,
+          mod_temp: 0
+        }
+      }
     }
   })
 };

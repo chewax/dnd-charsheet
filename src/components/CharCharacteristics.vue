@@ -2,7 +2,7 @@
   <div class="ccs-wrapper">
     <char-characteristic
       v-model="character"
-      name="fuerza"
+      name="strength"
       label="FUE"
       alt="Fuerza"
       type="number"
@@ -10,33 +10,39 @@
     ></char-characteristic>
     <char-characteristic
       v-model="character"
-      name="destreza"
+      name="dexterity"
       label="DES"
       alt="Destreza"
       type="number"
     ></char-characteristic>
     <char-characteristic
       v-model="character"
-      name="constitucion"
+      name="constitution"
       label="CON"
       alt="Constitucion"
       type="number"
     ></char-characteristic>
     <char-characteristic
       v-model="character"
-      name="inteligencia"
+      name="intelligence"
       label="INT"
       alt="Inteligencia"
       type="number"
     ></char-characteristic>
     <char-characteristic
       v-model="character"
-      name="sabiduria"
+      name="wisdom"
       label="SAB"
       alt="Sabiduria"
       type="number"
     ></char-characteristic>
-    <char-characteristic v-model="character" name="carisma" label="CAR" alt="carisma" type="number"></char-characteristic>
+    <char-characteristic
+      v-model="character"
+      name="charistma"
+      label="CAR"
+      alt="carisma"
+      type="number"
+    ></char-characteristic>
   </div>
 </template>
 
@@ -53,7 +59,7 @@ export default {
   },
   data: function() {
     return {
-      character: { ...this.modelValue, characteristics: {} }
+      character: this.modelValue
     };
   },
   methods: {
@@ -76,5 +82,6 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   margin-left: 5vw;
+  margin-top: 2vh;
 }
 </style>
